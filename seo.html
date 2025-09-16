@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEO pratique — Développeurs web & mobile</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/navigation.js"></script>
+  <script defer src="js/wazabo.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Introduction</a></li>
+        <li><a href="seo.html" class="active">SEO pratique</a></li>
+        <li><a href="test.html" data-lock="true">Tester un site</a></li>
+        <li><a href="outils.html" data-lock="true">Outils & Extensions</a></li>
+        <li><a href="sea.html" data-lock="true">SEA</a></li>
+        <li><a href="exercices.html" data-lock="true">Exercices</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>SEO pratique pour développeurs web & mobile</h1>
+
+    <h2>1. Optimisation technique</h2>
+    <p>
+      La base du SEO repose sur la technique : un site rapide, accessible et correctement indexé sera mieux référencé. 
+      Exemple pratique : vérifier les headers HTTP avec <code>curl</code> :
+      <pre><code>curl -I https://monsite.com/page</code></pre>
+      Vérifie le <code>status</code>, le <code>Content-Type</code> et les directives de cache.  
+      Pour les SPA (React, Vue, Angular), utilise SSR ou prerender pour exposer le contenu HTML aux moteurs.
+    </p>
+    <p>
+      Balises HTML essentielles :
+      <ul>
+        <li><code>&lt;title&gt;</code> unique et descriptif</li>
+        <li><code>&lt;meta name="description"&gt;</code> résumé concis</li>
+        <li>Balises <code>h1…h6</code> pour structurer le contenu</li>
+        <li>Attributs <code>alt</code> sur toutes les images</li>
+      </ul>
+      Documentation officielle : <a href="https://developers.google.com/search/docs/crawling-indexing" target="_blank">Google Search Docs</a>
+    </p>
+
+    <h2>2. Contenu et mots-clés</h2>
+    <p>
+      Les mots-clés doivent être intégrés naturellement dans le texte, titres et meta. Exemple :
+      <pre><code>&lt;h1&gt;Tutoriel React Native Performance&lt;/h1&gt;
+&lt;p&gt;Optimiser vos composants React Native pour un rendu plus rapide et fluide.&lt;/p&gt;</code></pre>
+      Outils pratiques pour générer des mots-clés : 
+      <a href="https://answerthepublic.com/" target="_blank">AnswerThePublic</a>, 
+      <a href="https://keywordtool.io/" target="_blank">Keyword Tool</a>.
+    </p>
+    <p>
+      Astuce développeur : structure ton contenu avec des listes, tableaux et exemples de code. Les moteurs valorisent un contenu riche et bien organisé.
+    </p>
+
+    <h2>3. Données structurées & popularité</h2>
+    <p>
+      Utilise JSON-LD pour enrichir les résultats dans Google :  
+      <pre><code>{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Optimiser les images pour le web",
+  "author": { "@type": "Person", "name": "Dev" },
+  "datePublished": "2025-01-01"
+}</code></pre>
+      Test : <a href="https://search.google.com/test/rich-results" target="_blank">Google Rich Results Test</a>
+    </p>
+    <p>
+      Popularité : obtenez des backlinks sur GitHub, blogs, forums techniques. Exemple : publiez un projet open-source et un tutoriel complet pour générer des liens naturels vers votre site.
+    </p>
+
+    <h2>Exercice pratique</h2>
+    <p>
+      1. Vérifie ton titre et meta description via la console du navigateur :  
+      <code>document.querySelector('title').textContent</code>  
+      2. Ajoute une balise <code>meta description</code> dans ton fichier HTML et observe le résultat.
+    </p>
+
+    <h2>Ressources recommandées</h2>
+    <ul>
+      <li><a href="https://web.dev/learn/seo/" target="_blank">Guide SEO pour développeurs web</a></li>
+      <li><a href="https://developers.google.com/search/docs/advanced/crawling/overview" target="_blank">Crawler & indexation</a></li>
+      <li><a href="https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data" target="_blank">Données structurées JSON-LD</a></li>
+      <li>Extension Chrome : <a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk" target="_blank">Lighthouse</a></li>
+    </ul>
+
+    <button class="validate" data-next="test.html">Page suivante : Tester un site →</button>
+  </main>
+
+  <footer>
+    <div id="wazabo"></div>
+  </footer>
+</body>
+</html>

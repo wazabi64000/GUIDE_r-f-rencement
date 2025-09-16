@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tester un site — SEO pratique</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/navigation.js"></script>
+  <script defer src="js/wazabo.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Introduction</a></li>
+        <li><a href="seo.html">SEO pratique</a></li>
+        <li><a href="test.html" class="active">Tester un site</a></li>
+        <li><a href="outils.html" data-lock="true">Outils & Extensions</a></li>
+        <li><a href="sea.html" data-lock="true">SEA</a></li>
+        <li><a href="exercices.html" data-lock="true">Exercices</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Tester un site pour le SEO</h1>
+
+    <h2>1. Vérifier l’indexation et les balises</h2>
+    <p>
+      Commence par tester si ton site est indexé :  
+      <code>site:monsite.com</code> dans Google.  
+      Ensuite, vérifie les balises essentielles avec la console du navigateur :
+      <pre><code>document.querySelector('title').textContent
+document.querySelector('meta[name="description"]').getAttribute('content')</code></pre>
+      Assure-toi que chaque page a un titre unique et une meta description descriptive.
+    </p>
+
+    <h2>2. Analyse technique avec Lighthouse</h2>
+    <p>
+      Lighthouse (Chrome DevTools ou extension) permet de tester performance, accessibilité et SEO. Exemple pratique :  
+      1. Ouvre DevTools (F12) → Audits → SEO → Générer le rapport.  
+      2. Corrige les erreurs détectées : images sans alt, balises manquantes, temps de chargement trop long.
+    </p>
+    <p>
+      Pour tester les temps de réponse serveur :
+      <pre><code>curl -I https://monsite.com/page</code></pre>
+      Vérifie le status, le Content-Type et les directives cache. Ces mesures impactent directement le référencement.
+    </p>
+
+    <h2>3. Tester la structure et les liens</h2>
+    <p>
+      Vérifie les liens internes et externes. Snippet JS pour lister tous les liens sur la page :
+      <pre><code>
+const liens = document.querySelectorAll('a');
+liens.forEach(a => console.log(a.href));
+      </code></pre>
+      Cela permet de repérer les liens brisés ou redondants.  
+      Bonus : installe l’extension Chrome <br>  <a href="https://chrome.google.com/webstore/detail/check-my-links/ojkcdipcgfaekbeaelaapakgnjflfglf" target="_blank">Check My Links Chrome</a>.
+
+     <br>  <a href="https://addons.mozilla.org/en-US/firefox/addon/find-broken-links/">Check My Links Firefox</a>
+    </p>
+
+    <h2>Exercice pratique</h2>
+    <p>
+      1. Vérifie l’indexation de ton site avec <code>site:monsite.com</code>.  
+      2. Ouvre Lighthouse et corrige toutes les erreurs SEO détectées.  
+      3. Liste tous les liens et identifie ceux à corriger.
+    </p>
+
+    <h2>Ressources</h2>
+    <ul>
+      <li><a href="https://web.dev/lighthouse-seo/" target="_blank">Lighthouse SEO Guide</a></li>
+      <li><a href="https://developers.google.com/search/docs/advanced/crawling/overview" target="_blank">Google Crawling & Indexation</a></li>
+      <li><a href="https://chrome.google.com/webstore/detail/check-my-links/ojkcdipcgfaekbeaelaapakgnjflfglf" target="_blank">Check My Links</a></li>
+    </ul>
+
+    <button class="validate" data-next="outils.html">Page suivante : Outils & Extensions →</button>
+  </main>
+
+  <footer>
+    <div id="wazabo"></div>
+  </footer>
+</body>
+</html>

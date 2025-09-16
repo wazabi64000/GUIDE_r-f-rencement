@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEA pratique — Développeurs web & mobile</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/navigation.js"></script>
+  <script defer src="js/wazabo.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Introduction</a></li>
+        <li><a href="seo.html">SEO pratique</a></li>
+        <li><a href="test.html">Tester un site</a></li>
+        <li><a href="outils.html">Outils & Extensions</a></li>
+        <li><a href="sea.html" class="active">SEA pratique</a></li>
+        <li><a href="exercices.html" data-lock="true">Exercices</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>SEA pratique pour développeurs web & mobile</h1>
+
+    <h2>1. Introduction au SEA</h2>
+    <p>
+      Le SEA (Search Engine Advertising) permet d’apparaître immédiatement dans les résultats payants.  
+      Les développeurs doivent comprendre le fonctionnement des enchères, le suivi des conversions et l’intégration des campagnes dans le workflow web/mobile.  
+      Exemple : une campagne Google Ads pour promouvoir une PWA de e-commerce ciblant "chaussures running homme".
+    </p>
+
+    <h2>2. Configuration d’une campagne</h2>
+    <p>
+      Étapes pratiques :
+      <ol>
+        <li>Créer un compte Google Ads ou Bing Ads.</li>
+        <li>Définir le budget quotidien et le coût par clic maximum.</li>
+        <li>Choisir le ciblage géographique et linguistique.</li>
+        <li>Rédiger l’annonce avec titre, description et URL finale.</li>
+      </ol>
+      Snippet d’exemple JSON pour config API Google Ads :
+      <pre><code>{
+  "campaign": "PWA E-commerce",
+  "budget": 20,
+  "keywords": ["chaussures running homme", "basket sport"],
+  "geo": "FR",
+  "language": "fr"
+}</code></pre>
+    </p>
+
+    <h2>3. Suivi et optimisation</h2>
+    <p>
+      Pour mesurer la performance des annonces :  
+      - Installer Google Analytics et lier au compte Ads.  
+      - Suivre CTR, impressions, conversions et CPC.  
+      - Exemple JS : suivre les clics sur le bouton d’achat :
+      <pre><code>document.querySelector('#buyBtn').addEventListener('click', () => {
+  gtag('event', 'purchase_click', {'event_category': 'SEA'});
+});</code></pre>
+      Astuce : créer plusieurs annonces et tester A/B pour identifier celles qui performent le mieux.
+    </p>
+
+    <h2>Exercice pratique</h2>
+    <p>
+      1. Crée un compte Google Ads test et configure une campagne fictive.  
+      2. Ajoute un suivi d’événement sur un bouton d’action avec Google Tag Manager ou JS.  
+      3. Analyse les impressions et CTR après quelques clics tests.
+    </p>
+
+    <h2>Ressources</h2>
+    <ul>
+      <li><a href="https://ads.google.com/home/tools/ads-editor/" target="_blank">Google Ads Editor</a></li>
+      <li><a href="https://developers.google.com/google-ads/api/docs/start" target="_blank">Google Ads API</a></li>
+      <li><a href="https://support.google.com/google-ads/answer/6167122?hl=fr" target="_blank">Suivi des conversions</a></li>
+      <li><a href="https://www.bing.com/webmasters/tools/ads" target="_blank">Bing Ads</a></li>
+    </ul>
+
+    <button class="validate" data-next="exercices.html">Page suivante : Exercices pratiques →</button>
+  </main>
+
+  <footer>
+    <div id="wazabo"></div>
+  </footer>
+</body>
+</html>

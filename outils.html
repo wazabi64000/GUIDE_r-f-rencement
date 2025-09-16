@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Outils & Extensions — SEO pratique</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/navigation.js"></script>
+  <script defer src="js/wazabo.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Introduction</a></li>
+        <li><a href="seo.html">SEO pratique</a></li>
+        <li><a href="test.html">Tester un site</a></li>
+        <li><a href="outils.html" class="active">Outils & Extensions</a></li>
+        <li><a href="sea.html" data-lock="true">SEA</a></li>
+        <li><a href="exercices.html" data-lock="true">Exercices</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Outils & Extensions pour SEO</h1>
+
+    <h2>1. Extensions de navigateur</h2>
+    <p>
+      Les extensions permettent d’analyser rapidement le SEO d’une page.  
+      Exemples pratiques pour Chrome/Firefox :
+      <ul>
+        <li><strong>Lighthouse</strong> : audit SEO, performance et accessibilité.</li>
+        <li><strong>SEO Meta in 1 Click</strong> : visualise toutes les meta balises en un clic.</li>
+        <li><strong>Check My Links</strong> : détecte les liens brisés sur la page.</li>
+        <li><strong>Wappalyzer</strong> : identifie les technologies utilisées sur le site.</li>
+      </ul>
+      Astuce développeur : installe-les toutes et compare les résultats sur ton site.
+    </p>
+
+    <h2>2. Logiciels et services en ligne</h2>
+    <p>
+      Pour un audit complet, tu peux utiliser :
+      <ul>
+        <li><strong>Screaming Frog SEO Spider</strong> : crawler ton site pour identifier balises manquantes, titres dupliqués et erreurs 404.</li>
+        <li><strong>Ahrefs / SEMrush</strong> : analyse des backlinks et mots-clés.</li>
+        <li><strong>PageSpeed Insights</strong> : test de performance et suggestions pour mobile et desktop.</li>
+      </ul>
+      Exemple pratique : exporte un CSV de toutes les URLs avec Screaming Frog et vérifie les pages sans balise title.
+    </p>
+
+    <h2>3. API et automatisation</h2>
+    <p>
+      Pour les développeurs, les API permettent d’automatiser l’audit SEO :
+      <ul>
+        <li><strong>Google Search Console API</strong> : récupérer les impressions, CTR et positions des mots-clés.</li>
+        <li><strong>PageSpeed Insights API</strong> : intégrer les tests de performance dans ton workflow CI/CD.</li>
+        <li>Script JS pour vérifier les balises meta dans plusieurs pages :
+          <pre><code>
+const pages = ['/index.html', '/about.html'];
+pages.forEach(url => fetch(url)
+  .then(r => r.text())
+  .then(html => {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(html, "text/html");
+    console.log(doc.querySelector('title')?.textContent);
+  })
+);
+          </code></pre>
+      </ul>
+    </p>
+
+    <h2>Exercice pratique</h2>
+    <p>
+      1. Installe Lighthouse et SEO Meta in 1 Click, puis analyse une page de ton site.  
+      2. Vérifie les balises title et description sur toutes les pages.  
+      3. Lance Screaming Frog ou un script pour détecter les liens brisés.
+    </p>
+
+    <h2>Ressources</h2>
+    <ul>
+      <li><a href="https://developers.google.com/web/tools/lighthouse" target="_blank">Lighthouse Documentation</a></li>
+      <li><a href="https://www.screamingfrog.co.uk/seo-spider/" target="_blank">Screaming Frog SEO Spider</a></li>
+      <li><a href="https://developers.google.com/search/apis" target="_blank">Google Search Console API</a></li>
+      <li><a href="https://developers.google.com/speed/docs/insights/v5/get-started" target="_blank">PageSpeed Insights API</a></li>
+    </ul>
+
+    <button class="validate" data-next="sea.html">Page suivante : SEA →</button>
+  </main>
+
+  <footer>
+    <div id="wazabo"></div>
+  </footer>
+</body>
+</html>

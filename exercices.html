@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Exercices pratiques — SEO & SEA</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/navigation.js"></script>
+  <script defer src="js/wazabo.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Introduction</a></li>
+        <li><a href="seo.html">SEO pratique</a></li>
+        <li><a href="test.html">Tester un site</a></li>
+        <li><a href="outils.html">Outils & Extensions</a></li>
+        <li><a href="sea.html">SEA pratique</a></li>
+        <li><a href="exercices.html" class="active">Exercices</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Exercices pratiques SEO & SEA</h1>
+
+    <h2>1. Exercices SEO</h2>
+    <p>
+      Objectif : améliorer la structure et le contenu d’un site.  
+      <ul>
+        <li>Vérifie que chaque page possède un titre unique et une meta description :  
+          <pre><code>document.querySelector('title').textContent
+document.querySelector('meta[name="description"]').getAttribute('content')</code></pre>
+        </li>
+        <li>Ajoute des balises <code>h1</code> à <code>h3</code> pour organiser le contenu.</li>
+        <li>Intègre un snippet JSON-LD pour un article :  
+          <pre><code>{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Optimiser les performances d'une PWA",
+  "author": { "@type": "Person", "name": "Dev" },
+  "datePublished": "2025-01-01"
+}</code></pre>
+        </li>
+      </ul>
+    </p>
+
+    <h2>2. Exercices SEA</h2>
+    <p>
+      Objectif : simuler une campagne publicitaire et suivre les événements.  
+      <ul>
+        <li>Créer un compte Google Ads test et configurer une campagne fictive.</li>
+        <li>Ajouter un suivi de clic sur un bouton avec Google Tag Manager ou JS :  
+          <pre><code>document.querySelector('#buyBtn').addEventListener('click', () => {
+  gtag('event', 'purchase_click', {'event_category': 'SEA'});
+});</code></pre>
+        </li>
+        <li>Observer les impressions et CTR dans Google Ads ou Analytics.</li>
+      </ul>
+    </p>
+
+    <h2>3. Audit et vérification</h2>
+    <p>
+      Combine SEO et SEA pour tester ton site :
+      <ul>
+        <li>Lancer Lighthouse et corriger toutes les erreurs SEO détectées.</li>
+        <li>Vérifier tous les liens internes et externes avec <a href="https://chrome.google.com/webstore/detail/check-my-links/ojkcdipcgfaekbeaelaapakgnjflfglf" target="_blank">Check My Links</a>.</li>
+        <li>Mesurer les temps de réponse et le rendu mobile avec PageSpeed Insights.</li>
+      </ul>
+    </p>
+
+    <h2>Ressources complémentaires</h2>
+    <ul>
+      <li><a href="https://developers.google.com/search/docs" target="_blank">Google Search Documentation</a></li>
+      <li><a href="https://web.dev/learn/seo/" target="_blank">Web.dev SEO Guide</a></li>
+      <li><a href="https://developers.google.com/ads/api/docs/start" target="_blank">Google Ads API</a></li>
+      <li><a href="https://www.screamingfrog.co.uk/seo-spider/" target="_blank">Screaming Frog SEO Spider</a></li>
+    </ul>
+
+    <h2>Exercice final</h2>
+    <p>
+      1. Corrige tous les problèmes SEO détectés sur ton site (titres, meta, balises).  
+      2. Simule une campagne SEA et ajoute le suivi des clics sur un bouton d’action.  
+      3. Mesure les performances et fais un mini rapport des actions réalisées.
+    </p>
+
+    <button class="validate" data-next="index.html">Terminer et recommencer →</button>
+  </main>
+
+  <footer>
+    <div id="wazabo"></div>
+  </footer>
+</body>
+</html>
